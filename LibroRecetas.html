@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Proyecto Libro de Receta</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Santo Valenzuela</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Home Page</a></li>
+							<li><a href="SobreMi.html">Sobre mí</a></li>
+							<li class="active"><a href="Portafolio.html">Portafolio</a></li>
+							<li><a href="Habilidades.html">Experiencias y Habilidades</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">April, 2025</span>
+									<h1>Gestor de Recetas</h1>
+									<p>Esta aplicación de escritorio está desarrollada en Python, utilizando CustomTkinter y la biblioteca PIL para ofrecer una interfaz gráfica intuitiva y moderna. Al iniciar, el usuario accede mediante un sistema de login seguro. Una vez validado, aparece un menú principal con opciones claras para insertar, ver, editar o eliminar recetas. Cada módulo maneja de forma organizada toda la lógica de negocio: inserción de datos, almacenamiento de imágenes y procesamiento de ingredientes y pasos.</p>
+									<p><strong>Funciones Clave</strong></p>
+									<p><strong>Inserción de Recetas:</strong> Permite agregar una nueva receta ingresando nombre, descripción, tiempo, complejidad y fecha. El sistema facilita cargar y copiar automáticamente la imagen asociada para guardarla localmente. A través de un formulario dinámico, el usuario introduce ingredientes (nombre, cantidad y unidad) y define cada paso de preparación en orden, construyendo internamente una lista encadenada de pasos.</p>
+									<p><strong>Visualización y Navegación:</strong> Ofrece un filtro por nivel de complejidad para listar recetas existentes. Al seleccionar una receta, se despliegan sus detalles (imagen, descripción, comentarios, duración, complejidad e ingredientes) y, mediante botones de “anterior” y “siguiente”, se navega paso a paso a lo largo de la preparación, facilitando la consulta ordenada de cada etapa.</p>
+									<p><strong>Edición y Eliminación:</strong> El módulo de edición permite filtrar recetas por complejidad, elegir una receta y modificar todos sus campos: nombre, descripción, tiempo, complejidad, comentario, imagen, ingredientes y pasos. Cada cambio se guarda de forma íntegra, actualizando la fuente de datos subyacente. De manera similar, la opción de eliminación confirma la receta a borrar y la remueve del sistema, actualizando inmediatamente la lista de recetas disponibles.</p>
+									<p><strong>Tecnologías y Arquitectura</strong></p>
+									<p><strong>Interfaz:</strong> La capa de interfaz se construye con CustomTkinter, aprovechando temas oscuros y claros, botones con iconos y cuadros de texto estilizados.</p>
+									<p><strong>Gestión de Imágenes:</strong> Para la gestión de imágenes, se usa PIL (Python Imaging Library), lo que posibilita redimensionar y renderizar fotos de recetas dentro de la aplicación.</p>
+									<p><strong>Lógica de Datos:</strong> La lógica de datos (insertar, obtener, actualizar y eliminar recetas, ingredientes y pasos) está encapsulada en clases como RecetaFunciones y ListaPasos, que se comunican con el almacenamiento subyacente (por ejemplo, XML o base de datos).</p>
+									<p><strong>Diseño Modular:</strong> El diseño modular separa claramente la ventana de login, el menú principal y cada pantalla funcional (insertar, ver, editar, eliminar), facilitando futuros mantenimientos o ampliaciones.</p>
+									<p>En conjunto, este Gestor de Recetas ofrece un flujo sencillo y completo: el usuario inicia sesión, selecciona la acción deseada, trabaja con formularios detallados para ingresar o modificar información, y navega de manera clara por toda la receta, desde sus ingredientes hasta cada paso de preparación. Gracias a la combinación de CustomTkinter y PIL, la experiencia resulta ágil, visualmente atractiva y adecuada tanto para usuarios finales como para demostraciones en portafolio.</p>
+								</header>
+								<div class="image main"><img src="images/LibroRecetas/pic1.png" alt="" /></div>
+							</section>
+
+					</div>
+
+				<!-- Image -->
+					<h2>Image</h2>
+
+					<h3>Fit</h3>
+					<span class="image fit"><img src="images/LibroRecetas/pic1.png" alt="" /></span>
+					<div class="box alt">
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-4"><span class="image fit"><img src="images/LibroRecetas/pic1.png" alt="" /></span></div>
+							<div class="col-4"><span class="image fit"><img src="images/LibroRecetas/pic2.png" alt="" /></span></div>
+							<div class="col-4"><span class="image fit"><img src="images/LibroRecetas/pic3.png" alt="" /></span></div>
+							<!-- Break -->
+							<div class="col-4"><span class="image fit"><img src="images/LibroRecetas/pic4.png" alt="" /></span></div>
+							<div class="col-4"><span class="image fit"><img src="images/LibroRecetas/pic5.png" alt="" /></span></div>
+							<div class="col-4"><span class="image fit"><img src="images/LibroRecetas/pic6.png" alt="" /></span></div>
+							
+						</div>
+					</div>
+				
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

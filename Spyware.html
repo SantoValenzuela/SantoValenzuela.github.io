@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Proyecto Spyware</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="logo">Santo Valenzuela</a>
+			</header>
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="index.html">Home Page</a></li>
+					<li><a href="SobreMi.html">Sobre mí</a></li>
+					<li class="active"><a href="Portafolio.html">Portafolio</a></li>
+					<li><a href="Habilidades.html">Experiencias y Habilidades</a></li>
+				</ul>
+				<ul class="icons">
+					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+				</ul>
+			</nav>
+
+			<!-- Main -->
+			<div id="main">
+
+				<!-- Post -->
+				<section class="post">
+					<header class="major">
+						<span class="date">April, 2025</span>
+						<h1>Spyware<br />
+						Monitor de Sistema y Keylogger con GUI</h1>
+						<p>El segundo proyecto es una herramienta de monitoreo que recopila información del sistema, registra pulsaciones de teclado y envía todo a un “webhook” de prueba, nuevamente con una interfaz en Tkinter. En detalle:</p>
+					</header>
+					<p><strong>1. Recolección de información del sistema:</strong><br />
+					Con <code>platform</code> se recoge sistema operativo, versión, nombre de máquina, procesador y arquitectura. Con <code>psutil</code> se obtiene memoria total y uso, disco total y uso, lista de procesos en ejecución (PID, nombre de usuario) y conexiones de red activas (sockets, direcciones y estado). También recopila datos de red básica: nombre del host e IP.</p>
+					<p><strong>2. Keylogger en segundo plano:</strong><br />
+					Emplea <code>pynput.keyboard</code> para escuchar (en un hilo demonio) cada pulsación, guardando en una lista interna tanto teclas normales como las especiales (representadas entre corchetes). Cada pulsación se muestra en tiempo real dentro del área de texto de la GUI, ilustrando cómo se capturan eventos de teclado.</p>
+					<p><strong>3. Guardado periódico y envío a webhook:</strong><br />
+					Cada 20 segundos (en un hilo demonio diferente) reúne toda la información del sistema y las pulsaciones hasta el momento, las guarda en un archivo JSON (<code>system_log.txt</code>) y lo envía a un endpoint (por ejemplo, Webhook.site o Discord) usando <code>Requests</code>. Desde la GUI, el usuario puede forzar manualmente “Guardar ahora” o “Enviar ahora”, así como iniciar o detener el logger en segundo plano. Esto simula un escenario de exfiltración de datos: un proceso corre periódicamente y envía información sensible a un servidor remoto.</p>
+					<p><strong>4. Descarga y ejecución de un archivo de prueba:</strong><br />
+					Incluye una función que descarga un video de muestra usando <code>Requests</code> y, a continuación, abre el archivo en el reproductor predeterminado (mediante <code>os.startfile</code> en Windows o <code>xdg-open</code> en Linux/Mac). En la GUI existe un botón “Descargar y Ejecutar Archivo” que, al pulsarlo, ejecuta esta acción y muestra el resultado (éxito o error) en un área de texto.</p>
+					<p><strong>Tecnologías empleadas:</strong></p>
+					<ul>
+						<li>Python 3.6+</li>
+						<li><code>platform</code>, <code>psutil</code> (información del sistema y procesos)</li>
+						<li><code>pynput</code> (keylogger)</li>
+						<li><code>Requests</code> (peticiones HTTP)</li>
+						<li>Tkinter (GUI: Notebook, ScrolledText, MessageBox)</li>
+						<li>threading (hilos para keylogger y guardado/envío periódico)</li>
+						<li><code>json</code> (estructura de datos JSON)</li>
+						<li><code>os</code>, <code>socket</code>, <code>time</code> (funciones de sistema, IP/hostname, temporizadores)</li>
+					</ul>
+					<p><strong>Contexto y relevancia en seguridad:</strong></p>
+					<ul>
+						<li>En un entorno de pruebas controlado, esta aplicación ilustra cómo se puede auditar un sistema local y, al mismo tiempo, simular un keylogger que captura información sensible del usuario.</li>
+						<li>La parte de envío a un webhook demuestra un flujo típico de exfiltración de datos: recopilar información del entorno, registrarla en un archivo y enviarla a un servidor remoto de manera automatizada.</li>
+						<li>Sirve para monitorizar rendimiento de CPU/RAM, detectar procesos sospechosos y verificar conexiones de red activas.</li>
+						<li>Permite comprender cómo se puede capturar la entrada del teclado para probar contramedidas (antivirus, detección de keyloggers).</li>
+						<li>Simula ataques de exfiltración para entrenar a analistas de seguridad en la detección de patrones de tráfico inusual (peticiones HTTP frecuentes con datos).</li>
+					</ul>
+					<p><strong>Nivel de conocimiento requerido:</strong></p>
+					<ul>
+						<li>Conocimientos sólidos de Python: uso de módulos nativos (<code>os</code>, <code>socket</code>, <code>json</code>, <code>time</code>), librerías de terceros (<code>psutil</code>, <code>pynput</code>, <code>requests</code>).</li>
+						<li>Gestión de hilos con <code>threading</code> para que las operaciones de red y captura de teclado no bloqueen la interfaz.</li>
+						<li>Familiaridad con Tkinter: pestañas (<code>Notebook</code>), cuadros de texto con scroll, manejo de eventos de botones y ventanas de diálogo.</li>
+						<li>Conocer las implicaciones de seguridad y privacidad: saber cuándo el keylogging es ético (previamente autorizado) y cómo los datos pueden filtrarse por HTTP a un servicio externo.</li>
+						<li>Algún conocimiento de redes (webhooks, HTTP POST) para comprender la parte de exfiltración de archivos.</li>
+					</ul>
+					<div class="image main"><img src="images/Spyware/pic1.png" alt="" /></div>
+				</section>
+
+			</div>
+
+			<!-- Image -->
+			<h2>Image</h2>
+
+			<h3>Fit</h3>
+			<span class="image fit"><img src="images/Spyware/pic1.png" alt="" /></span>
+			<div class="box alt">
+				<div class="row gtr-50 gtr-uniform">
+					<div class="col-4"><span class="image fit"><img src="images/Spyware/pic1.png" alt="" /></span></div>
+					<div class="col-4"><span class="image fit"><img src="images/Spyware/pic2.png" alt="" /></span></div>
+					<div class="col-4"><span class="image fit"><img src="images/Spyware/pic3.png" alt="" /></span></div>
+				
+				</div>
+			</div>
+
+			<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+		</div>
+	</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Proyecto Sistema Contable</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Santo Valenzuela</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Home Page</a></li>
+							<li><a href="SobreMi.html">Sobre mí</a></li>
+							<li class="active"><a href="Portafolio.html">Portafolio</a></li>
+							<li><a href="Habilidades.html">Experiencias y Habilidades</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">Abril, 2024</span>
+									<h1>Gestor de Contabilidad para Compra-Venta</h1>
+									<p>Este proyecto consiste en un sistema de gestión contable integral orientado a operaciones de compra-venta, desarrollado como aplicación de escritorio con Windows Forms. La finalidad principal es ofrecer una solución robusta que cubra desde el control de inventario y proveedores hasta la emisión de comprobantes de ventas, garantizando en todo momento la seguridad y la trazabilidad de la información financiera.</p>
+									<p>En el núcleo de la aplicación se utilizó SQL Server para el manejo de datos, implementando cifrado a nivel de base de datos para proteger información sensible (datos de clientes, registros de transacciones y contraseñas). Asimismo, se generaron códigos de barras de manera automática para cada artículo, lo que facilita la identificación rápida de productos en procesos de venta y almacenaje. Para el tratamiento de imágenes (por ejemplo, fotografías de productos o logos de proveedores), se diseñó un mecanismo de almacenamiento y recuperación directamente en la base de datos, asegurando consistencia y facilidad de mantenimiento. Adicionalmente, se incorporó Log4Net para el registro de eventos y errores, con el fin de ofrecer una capa extra de monitoreo y diagnóstico en tiempo de ejecución.</p>
+									<p>La aplicación está organizada en distintos módulos, cada uno enfocado en una parte fundamental del flujo de compra-venta:</p>
+									<p>Categorías y Artículos: Permite crear, editar y eliminar categorías de productos; para cada artículo se gestiona información como código, descripción, precio, stock y foto. La generación de códigos de barras se realiza al momento de dar de alta un nuevo artículo, de manera que cada producto disponga de un identificador único escaneable.</p>
+									<p>Control de Acceso y Seguridad: Incluye un módulo de inicio de sesión independiente que valida credenciales contra la base de datos cifrada. A partir de ahí, se activa la gestión de usuarios y roles, donde se pueden definir permisos específicos (por ejemplo: solo ventas, solo compras, administración de inventario) para garantizar que cada colaborador trabaje dentro de los límites de sus responsabilidades.</p>
+									<p>Compras y Proveedores: Facilita el registro de órdenes de compra, la vinculación con proveedores y el seguimiento del estado de cada pedido. Cada proveedor cuenta con su ficha descriptiva (datos de contacto, condiciones de pago y logotipo), y el sistema permite generar reportes de compras por período, proveedor o categoría.</p>
+									<p>Ventas y Facturación: Gestiona todo el ciclo de ventas: desde la selección de artículos mediante código de barras, la validación de stock, la emisión de facturas y recibos electrónicos, hasta la actualización automática del inventario. Además, se pueden aplicar descuentos o promociones por artículo o grupo de productos, y se genera un historial detallado de cada transacción para facilitar conciliaciones contables.</p>
+									<p>Gracias a esta arquitectura modular y al uso de tecnologías maduras (Windows Forms para la interfaz, SQL Server para la capa de datos, Log4Net para auditoría y cifrado a nivel de base de datos), el sistema ofrece un alto grado de seguridad, rendimiento y escalabilidad. Su diseño centrado en el usuario posibilita una curva de aprendizaje corta, mientras que las características de auditoría interna y el control de acceso garantizan un entorno confiable para cualquier empresa que necesite optimizar sus procesos de compra-venta y mantener una contabilidad ordenada y transparente.</p>
+								</header>
+								<div class="image main"><img src="images/SistemaContable/pic1.png" alt="" /></div>
+							</section>
+
+					</div>
+
+<!-- Image -->
+									<h2>Image</h2>
+
+									<h3>Fit</h3>
+									<span class="image fit"><img src="images/SistemaContable/pic1.png" alt="" /></span>
+									<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+											<div class="col-4"><span class="image fit"><img src="images/SistemaContable/pic1.png" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="images/SistemaContable/pic2.png" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="images/SistemaContable/pic3.png" alt="" /></span></div>
+											<!-- Break -->
+											<div class="col-4"><span class="image fit"><img src="images/SistemaContable/pic4.png" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="images/SistemaContable/pic5.png" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="images/SistemaContable/pic6.png" alt="" /></span></div>
+											<!-- Break -->
+											<div class="col-4"><span class="image fit"><img src="images/SistemaContable/pic10.png" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="images/SistemaContable/pic11.png" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="images/SistemaContable/pic12.png" alt="" /></span></div>
+										</div>
+									</div>
+				
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+								
+	</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Proyecto CrackFirewall</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="logo">Santo Valenzuela</a>
+			</header>
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="index.html">Home Page</a></li>
+					<li><a href="SobreMi.html">Sobre mí</a></li>
+					<li class="active"><a href="Portafolio.html">Portafolio</a></li>
+					<li><a href="Habilidades.html">Experiencias y Habilidades</a></li>
+				</ul>
+				<ul class="icons">
+					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+				</ul>
+			</nav>
+
+			<!-- Main -->
+			<div id="main">
+
+				<!-- Post -->
+				<section class="post">
+					<header class="major">
+						<span class="date">April, 2025</span>
+						<h1>CrackFirewall<br />
+						Kit de Pruebas de Seguridad con GUI</h1>
+						<p>Este primer proyecto consiste en un “Kit de Pruebas de Seguridad” pensado para entornos controlados de laboratorio. La aplicación permite, a través de una interfaz gráfica con Tkinter, ejecutar distintos tipos de pruebas:</p>
+					</header>
+					<p><strong>1. Escaneo de puertos TCP:</strong><br />
+					Utiliza la librería Scapy para construir y enviar paquetes TCP SYN. La herramienta detecta puertos abiertos, cerrados o filtrados según la respuesta (SYN-ACK, RST-ACK o ausencia de respuesta). Muestra en tiempo real cuáles de los puertos más comunes (FTP, SSH, HTTP, MySQL, etc.) están accesibles en el objetivo.</p>
+					<p><strong>2. Pruebas de evasión de firewall:</strong><br />
+					Una vez identificados puertos abiertos o filtrados, el sistema prueba técnicas básicas de evasión: fragmentación de paquetes, uso de puertos de origen “confiables” (53, 80, 443) y TTL bajo. Cada técnica se implementa construyendo un tipo concreto de paquete TCP/IP con Scapy y analizando si la respuesta difiere del comportamiento normal, lo que indicaría reglas de filtrado débiles.</p>
+					<p><strong>3. Crackeo de hashes (md5, sha1, sha256):</strong><br />
+					Incluye una clase “PasswordTester” que intenta descifrar contraseñas a partir de un hash. Primero realiza un ataque de diccionario, probando una lista de contraseñas comunes (y variaciones “leet” con reemplazos de caracteres). Si no se encuentra en el diccionario, ejecuta un ataque de fuerza bruta limitado (cadenas de longitud 4–6 con letras y dígitos). La interfaz solicita el hash y el tipo (por ejemplo “sha1”) y, de encontrar coincidencia, muestra la contraseña original y cuántos intentos se emplearon.</p>
+					<p><strong>4. Prueba de credenciales SSH y de formulario web:</strong><br />
+					Para SSH se usa Paramiko: se intenta conectar con distintas contraseñas hasta encontrar la correcta o agotar el listado. Para un formulario web (“login”), se envían peticiones HTTP POST con distintas credenciales usando Requests, comparando la respuesta contra un indicador de éxito.</p>
+					<p><strong>Tecnologías empleadas:</strong></p>
+					<ul>
+						<li>Python 3.6+</li>
+						<li>Scapy (paquetes de red y crudos)</li>
+						<li>Paramiko (autenticación SSH)</li>
+						<li>Requests (peticiones HTTP)</li>
+						<li>Tkinter (GUI: widgets, Notebook, ScrolledText, MessageBox)</li>
+						<li>threading (hilos para que las operaciones de red y crackeo no bloqueen la interfaz)</li>
+						<li>hashlib (cálculo y comparación de hashes)</li>
+					</ul>
+					<p><strong>Contexto y relevancia en seguridad:</strong></p>
+					<ul>
+						<li>Este kit simula, en un entorno de laboratorio, las tareas básicas de un pentester o analista de seguridad: escanear puertos, probar técnicas de evasión de firewall, crackear hashes y credenciales.</li>
+						<li>Escanear puertos ayuda a detectar servicios vulnerables o mal configurados en una red.</li>
+						<li>Comprobar evasión de firewall revela si el cortafuegos es susceptible a técnicas de fragmentación o manipulación de TTL.</li>
+						<li>Crackear hashes y credenciales demuestra la importancia de usar contraseñas robustas y políticas de bloqueo en SSH o formularios web con mecanismos de defensa.</li>
+						<li>Permite generar informes sobre puertos expuestos, reglas de firewall débiles y contraseñas vulnerables dentro de la organización.</li>
+						<li>Desde el punto de vista educativo, ilustra la lógica de cada técnica y cómo programar un cliente de red completo en Python.</li>
+					</ul>
+					<p><strong>Nivel de conocimiento requerido:</strong></p>
+					<ul>
+						<li>Python intermedio/avanzado (módulos, clases y excepciones).</li>
+						<li>Fundamentos de redes TCP/IP y protocolos (flags TCP, IP, TTL).</li>
+						<li>Manejo de librerías de seguridad en Python (Scapy, Paramiko).</li>
+						<li>Conceptos de hashing (md5, sha1, sha256) y ataques de fuerza bruta o diccionario.</li>
+						<li>Creación de aplicaciones de escritorio con Tkinter y gestión de hilos (threading).</li>
+						<li>Comprensión de por qué cada paso (enviar paquetes, leer respuestas, generar variaciones de contraseña, usar SSH) es relevante para evaluar la seguridad.</li>
+					</ul>
+					<div class="image main"><img src="images/CrackFirewall/pic1.png" alt="" /></div>
+				</section>
+
+			</div>
+
+			<!-- Image -->
+			<h2>Image</h2>
+
+			<h3>Fit</h3>
+			<span class="image fit"><img src="images/CrackFirewall/pic1.png" alt="" /></span>
+			<div class="box alt">
+				<div class="row gtr-50 gtr-uniform">
+					<div class="col-4"><span class="image fit"><img src="images/CrackFirewall/pic1.png" alt="" /></span></div>
+					<div class="col-4"><span class="image fit"><img src="images/CrackFirewall/pic2.png" alt="" /></span></div>
+					<div class="col-4"><span class="image fit"><img src="images/CrackFirewall/pic3.png" alt="" /></span></div>
+					<!-- Break -->
+					<div class="col-4"><span class="image fit"><img src="images/CrackFirewall/pic4.png" alt="" /></span></div>
+					<div class="col-4"><span class="image fit"><img src="images/CrackFirewall/pic5.png" alt="" /></span></div>
+					<div class="col-4"><span class="image fit"><img src="images/CrackFirewall/pic6.png" alt="" /></span></div>
+					<!-- Break -->
+					<div class="col-4"><span class="image fit"><img src="images/CrackFirewall/pic6.png" alt="" /></span></div>
+					<div class="col-4"><span class="image fit"><img src="images/CrackFirewall/pic7.png" alt="" /></span></div>
+					
+				</div>
+			</div>
+
+			<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+		</div>
+	</body>
+</html>
