@@ -45,9 +45,9 @@
 				<section class="post">
 					<header class="major">
 						<span class="date">April, 2025</span>
-						<h1>Spyware<br />
+						<h1>
 						Monitor de Sistema y Keylogger con GUI</h1>
-						<p>El segundo proyecto es una herramienta de monitoreo que recopila información del sistema, registra pulsaciones de teclado y envía todo a un “webhook” de prueba, nuevamente con una interfaz en Tkinter. En detalle:</p>
+						<p>Este proyecto es una herramienta de monitoreo que recopila información del sistema, registra pulsaciones de teclado y envía todo a un “webhook” de prueba, nuevamente con una interfaz en Tkinter. En detalle:</p>
 					</header>
 					<p><strong>1. Recolección de información del sistema:</strong><br />
 					Con <code>platform</code> se recoge sistema operativo, versión, nombre de máquina, procesador y arquitectura. Con <code>psutil</code> se obtiene memoria total y uso, disco total y uso, lista de procesos en ejecución (PID, nombre de usuario) y conexiones de red activas (sockets, direcciones y estado). También recopila datos de red básica: nombre del host e IP.</p>
@@ -57,6 +57,8 @@
 					Cada 20 segundos (en un hilo demonio diferente) reúne toda la información del sistema y las pulsaciones hasta el momento, las guarda en un archivo JSON (<code>system_log.txt</code>) y lo envía a un endpoint (por ejemplo, Webhook.site o Discord) usando <code>Requests</code>. Desde la GUI, el usuario puede forzar manualmente “Guardar ahora” o “Enviar ahora”, así como iniciar o detener el logger en segundo plano. Esto simula un escenario de exfiltración de datos: un proceso corre periódicamente y envía información sensible a un servidor remoto.</p>
 					<p><strong>4. Descarga y ejecución de un archivo de prueba:</strong><br />
 					Incluye una función que descarga un video de muestra usando <code>Requests</code> y, a continuación, abre el archivo en el reproductor predeterminado (mediante <code>os.startfile</code> en Windows o <code>xdg-open</code> en Linux/Mac). En la GUI existe un botón “Descargar y Ejecutar Archivo” que, al pulsarlo, ejecuta esta acción y muestra el resultado (éxito o error) en un área de texto.</p>
+					<div class="image main"><img src="images/Spyware/pic1.png" alt="" /></div>
+					
 					<p><strong>Tecnologías empleadas:</strong></p>
 					<ul>
 						<li>Python 3.6+</li>
@@ -84,16 +86,7 @@
 						<li>Conocer las implicaciones de seguridad y privacidad: saber cuándo el keylogging es ético (previamente autorizado) y cómo los datos pueden filtrarse por HTTP a un servicio externo.</li>
 						<li>Algún conocimiento de redes (webhooks, HTTP POST) para comprender la parte de exfiltración de archivos.</li>
 					</ul>
-					<div class="image main"><img src="images/Spyware/pic1.png" alt="" /></div>
-				</section>
-
-			</div>
-
-			<!-- Image -->
-			<h2>Image</h2>
-
-			<h3>Fit</h3>
-			<span class="image fit"><img src="images/Spyware/pic1.png" alt="" /></span>
+								<span class="image fit"><img src="images/Spyware/pic1.png" alt="" /></span>
 			<div class="box alt">
 				<div class="row gtr-50 gtr-uniform">
 					<div class="col-4"><span class="image fit"><img src="images/Spyware/pic1.png" alt="" /></span></div>
@@ -101,24 +94,26 @@
 					<div class="col-4"><span class="image fit"><img src="images/Spyware/pic3.png" alt="" /></span></div>
 				
 				</div>
-			</div>
 
-			<!-- Contacto -->
-									<h2>Contacto</h2>
+				<div>
+					<h2>Contacto</h2>
 									<p>Si deseas ponerte en contacto conmigo, puedes escribirme a:</p>
 									<ul class="alt">
-										<li>Email: <a href="mailto:santovalenzuela@ejemplo.com">santovalenzuela@ejemplo.com</a></li>
-										<li>Teléfono: <a href="tel:+18000000000">+1 (800) 000-0000</a></li>
+										<li>Email: <a href="mailto:yuniorvvv@gmail.com">yuniorvvv@gmail.com</a></li>
+										<li>Teléfono: <a href="tel:+18098563501">+1 (809) 856-3501</a></li>
 									</ul>
 									<p>También puedes seguirme en redes sociales:</p>
 									<ul class="icons alt">
-										<li><a href="https://twitter.com/tu_usuario" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="https://facebook.com/tu_usuario" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="https://instagram.com/tu_usuario" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="https://github.com/tu_usuario" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+										<li><a href="https://www.instagram.com/aa.yunior1" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="https://github.com/SantoValenzuela" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
 									</ul>
+				</div>
+				</section>
 
-							</section>
+			</div>
+
+
+
 
 			<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
