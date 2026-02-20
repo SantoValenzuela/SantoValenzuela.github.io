@@ -4687,3 +4687,138 @@ input, select, textarea {
 		}
 
 	}
+
+	/* =========================================================
+   TECH MOTION OVERLAY (CSS-only) — pro, sutil y disruptivo
+   Pegar al FINAL de assets/css/main.css
+   ========================================================= */
+
+/* Ajustes rápidos */
+:root {
+	--tech-accent: 24, 191, 239;      /* #18bfef en RGB */
+	--tech-grid-size: 80px;           /* tamaño del grid */
+	--tech-grid-opacity: 0.18;        /* intensidad del grid */
+	--tech-scan-opacity: 0.12;        /* intensidad de la scanline */
+	--tech-glow-opacity: 0.10;        /* intensidad del glow */
+}
+
+/* La capa background del template ya está detrás (z-index:-1).:contentReference[oaicite:2]{index=2} */
+/* Le añadimos 2 pseudo-capas animadas por encima del fondo, pero detrás del contenido */
+#wrapper > .bg {
+	overflow: hidden;
+}
+
+/* GRID + DOTS (estilo circuito) */
+#wrapper > .bg::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	opacity: var(--tech-grid-opacity);
+	mix-blend-mode: screen;
+
+	background-image:
+		/* puntitos */
+		radial-gradient(circle at 1px 1px, rgba(var(--tech-accent), 0.45) 1px, transparent 1.2px),
+		/* líneas horizontales */
+		linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+		/* líneas verticales */
+		linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+
+	background-size:
+		calc(var(--tech-grid-size) / 2) calc(var(--tech-grid-size) / 2),
+		var(--tech-grid-size) var(--tech-grid-size),
+		var(--tech-grid-size) var(--tech-grid-size);
+
+	filter: blur(0px);
+	animation: techGridMove 22s linear infinite;
+	transform: translateZ(0);
+}
+
+/* SCANLINE + GLOW (movimiento suave) */
+#wrapper > .bg::after {
+	content: "";
+	position: absolute;
+	inset: -30%;
+	pointer-events: none;
+	mix-blend-mode: screen;
+
+	background-image:
+		/* glow suave */
+		radial-gradient(closest-side at 30% 40%, rgba(var(--tech-accent), 0.35), transparent 60%),
+		radial-gradient(closest-side at 70% 60%, rgba(255, 255, 255, 0.18), transparent 65%),
+		/* scanline diagonal */
+		repeating-linear-gradient(
+			115deg,
+			transparent 0px,
+			transparent 28px,
+			rgba(var(--tech-accent), 0.08) 29px,
+			transparent 32px
+		);
+
+	opacity: var(--tech-glow-opacity);
+	filter: blur(0.2px);
+	animation: techAurora 16s ease-in-out infinite;
+	transform: translateZ(0);
+}
+
+/* Animaciones */
+@keyframes techGridMove {
+	0% {
+		background-position: 0 0, 0 0, 0 0;
+	}
+	100% {
+		background-position: -260px 180px, -120px 60px, 80px -140px;
+	}
+}
+
+@keyframes techAurora {
+	0% {
+		transform: translate(-2%, -2%) rotate(0deg);
+		opacity: 0.08;
+	}
+	50% {
+		transform: translate(2%, 2%) rotate(6deg);
+		opacity: 0.14;
+	}
+	100% {
+		transform: translate(-2%, -2%) rotate(0deg);
+		opacity: 0.08;
+	}
+}
+
+/* Micro-mejora: hover más "premium" en cards e imágenes (sin romper tu estilo) */
+.posts article .image img,
+.image.main img {
+	transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+.posts article:hover .image img,
+.image.main:hover img {
+	transform: scale(1.02);
+	filter: drop-shadow(0 10px 25px rgba(var(--tech-accent), 0.18));
+}
+
+/* Botones con un glow muy sutil en hover (mantiene el inset del template) */
+.button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+button:hover {
+	box-shadow: inset 0 0 0 2px rgb(var(--tech-accent)), 0 0 24px rgba(var(--tech-accent), 0.22);
+}
+
+/* En móvil baja un poquito la intensidad */
+@media screen and (max-width: 736px) {
+	:root {
+		--tech-grid-opacity: 0.10;
+		--tech-glow-opacity: 0.07;
+	}
+}
+
+/* Respeto accesibilidad: si el usuario prefiere menos movimiento, apagamos animación */
+@media (prefers-reduced-motion: reduce) {
+	#wrapper > .bg::before,
+	#wrapper > .bg::after {
+		animation: none !important;
+	}
+}
