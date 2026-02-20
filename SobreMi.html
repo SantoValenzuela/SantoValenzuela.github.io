@@ -11,136 +11,280 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<!-- Estilos específicos para la foto circular al lado del perfil -->
+		<style>
+			/* Avatar inline (izquierda del texto) */
+			.profile-intro {
+				display: flex;
+				align-items: flex-start;
+				gap: 1.25rem;
+				margin-top: 0.5rem;
+			}
+
+			.avatar-inline {
+				flex: 0 0 auto;
+				width: 160px;
+				height: 160px;
+				border-radius: 50%;
+				overflow: hidden;
+				border: 3px solid rgba(24, 191, 239, 0.35);
+				background: rgba(255, 255, 255, 0.02);
+				box-shadow:
+					0 12px 30px rgba(0, 0, 0, 0.22),
+					0 0 22px rgba(24, 191, 239, 0.14);
+			}
+			.avatar-inline img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				display: block;
+			}
+
+			.profile-copy p {
+				margin-top: 0;
+			}
+
+			.profile-highlights {
+				margin: 0.75rem 0 0 0;
+			}
+			.profile-highlights li {
+				margin: 0.35rem 0;
+			}
+
+			/* Responsive */
+			@media screen and (max-width: 736px) {
+				.profile-intro {
+					flex-direction: column;
+					align-items: center;
+					text-align: left;
+				}
+				.avatar-inline {
+					width: 240px;
+					height: 240px;
+				}
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
-			<div id="wrapper">
+		<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Santo Valenzuela</a>
+			<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="logo">Santo Valenzuela</a>
+			</header>
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="index.html">Home Page</a></li>
+					<li class="active"><a href="SobreMi.html">Sobre mí</a></li>
+					<li><a href="Portafolio.html">Portafolio</a></li>
+					<li><a href="Habilidades.html">Experiencias y Habilidades</a></li>
+				</ul>
+				<ul class="icons">
+					<li><a href="https://www.instagram.com/aa.yunior1" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="https://github.com/SantoValenzuela" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+				</ul>
+			</nav>
+
+			<!-- Main -->
+			<div id="main">
+
+				<!-- Post -->
+				<section class="post">
+					<header class="major">
+						<h1>Sobre mí</h1>
+						
 					</header>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li><a href="index.html">Home Page</a></li>
-							<li class="active"><a href="SobreMi.html">Sobre mí</a></li>
-							<li><a href="Portafolio.html">Portafolio</a></li>
-							<li><a href="Habilidades.html">Experiencias y Habilidades</a></li>
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.instagram.com/aa.yunior1" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="https://github.com/SantoValenzuela" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
+					<!-- PERFIL (más relevante y con foto al lado) -->
+					<h2>Perfil</h2>
 
-				<!-- Main -->
-					<div id="main">
+					<div class="profile-intro">
+						<span class="avatar-inline">
+							<img src="images/yo.png" alt="Foto de Santo Yunior Valenzuela Reyes" />
+						</span>
 
-						<!-- Post -->
-							<section class="post">
-								<header class="major">
-									<h1>Sobre mí</h1>
-								</header>
+						<div class="profile-copy">
+							<p>
+								Soy <strong>Santo Yunior Valenzuela Reyes</strong>, estudiante de <strong>Ingeniería de Sistemas</strong> en INTEC. Me enfoco en construir soluciones
+								que se sientan “de producción”: arquitectura clara, experiencia de usuario cuidada, trazabilidad, y criterios de seguridad desde el diseño.
+								Me gusta combinar lo técnico con lo estratégico: entender el problema, proponer un sistema sólido y ejecutarlo con disciplina.
+							</p>
 
-								<!-- Perfil -->
-									<h2>Perfil</h2>
-									<p>Soy Santo Yunior Valenzuela Reyes, estudiante de Ingeniería de Sistemas en el Instituto Tecnológico de Santo Domingo (INTEC). Me considero una persona firme, de pensamiento claro, con fuertes convicciones y decidida a alcanzar mis objetivos. Mantengo un enfoque equilibrado entre mi vida académica, actividades extracurriculares y mi pasiones. Creo en la importancia de la inteligencia emocional y la disciplina como pilares para el éxito, y disfruto de enfrentar retos académicos y personales con una actitud positiva y proactiva.</p>
-									<hr />
+							<ul class="profile-highlights">
+								<li><strong>1er lugar en hackatón:</strong> Ualett Go+ (SaaS + Fintech, enfoque en conductores y liquidez).</li>
+								<li><strong>Tecnologías emergentes:</strong> sistema de contratos con <strong>integración a Blockchain</strong> (on-chain + off-chain).</li>
+								<li><strong>Seguridad aplicada:</strong> herramientas educativas/entornos controlados (honey pot, pruebas, monitoreo y análisis).</li>
+								<li><strong>Liderazgo:</strong> presidente del <strong>Club de Debate INTEC</strong> y experiencia competitiva a nivel nacional.</li>
+							</ul>
 
-								<!-- Formación Académica -->
-									<h2>Formación Académica</h2>
-									<h3>Ingeniería de Sistemas - INTEC</h3>
-									<p>Actualmente cursando la carrera en Ingeniería de Sistemas en INTEC, he adquirido conocimientos sólidos en programación, bases de datos, estadística y desarrollo de software. Me he destacado en materias como Bases de Datos (trabajando con MySQL, SQL Server, procedimientos almacenados y consultas complejas), Programación en C++ (estructuras de datos, algoritmos de ordenamiento, algoritmos de fuerza bruta, entre otros) y VHDL (diseño y simulación de circuitos digitales).</p>
-									<p>He participado en proyectos académicos que incluyen:</p>
-									<ul>
-										<li>Desarrollo de una aplicación en Windows Forms con C# y .NET Framework para gestión de imágenes y consumo de Web API, integrando Log4net para registro de eventos.</li>
-										<li>Creación de una aplicación en Python para extracción de texto de imágenes con interfaz gráfica.</li>
-										<li>Implementación, análisis y entendimiento de algoritmos maliciosos, creando y analizando este tipo de aplicaciones y manejando las herramientas de analisis de malware</li>
-										<li>Proyecto de un libro de recetas personal, sumando a esto un proyecto de creacion y resolucion de laberintos con algoritmos avanzados como el backtraking</li>
-									</ul>
-									<hr />
-
-								<!-- Experiencia y Proyectos -->
-									<h2>Experiencia y Proyectos</h2>
-									<h3>Club de Debate INTEC</h3>
-									<p>He sido presidente del Club de Debate INTEC, liderando la planificación de actividades semanales que incluyen debates, talleres y encuentros de formación. He participado activamente en foros de debate sobre diversos temas de actualidad, llegando a estar en escenarios como la final del campeonato nacional de debate.</p>
-									<h3>Proyecto Education Hive</h3>
-									<p>Desarrollé el prototipo de una página educativa sobre los Objetivos de Desarrollo Sostenible (ODS) utilizando diversas tecnologias web. El proyecto contempla secciones interactivas donde un personaje en forma de niño abeja explica cada ODS, y contiene recursos de la NASA para ampliar el aprendizaje. Fui reconocido localmente por la mejor calidad narrativa con este proyecto durante el NASA Space Apps Challenge 2024.</p>
-									<h3>Experiencia en Ciberseguridad</h3>
-									<p>He trabajado en proyectos de ciberseguridad, incluyendo la implementación de un honeypot en Linux para pruebas de seguridad y el análisis de vulnerabilidades en plataformas como Microsoft y CrowdStrike. 
-									Ademas fui parte del equipo ganador del capture the flag (CTF) de MAGIC en 2024, donde nos enfrentamos a retos de ciberseguridad y hacking ético, aplicando técnicas de análisis forense y explotación de vulnerabilidades.</p>
-									
-									<h3>Proyectos de Programación</h3>
-									<ul>
-										<li>Desarrollo de multiples aplicaciones en c++ para fortalecer mis capacidades de análisis y resolucion de problemas en programación</li>
-										<li>Creación de una aplicación en Python con Pygame para visualización de algoritmos de backtracking en laberintos.</li>
-										<li>Implementación de un honeypot en Linux usando VirtualBox para pruebas de ciberseguridad.</li>
-										<li>Diseño de sistemas de bases de datos en SQL Server para simulación de rutas de vuelo, incluyendo normalización de tablas y creación de índices.</li>
-									</ul>
-									<hr />
-
-								<!-- Habilidades Técnicas -->
-									<h2>Habilidades Técnicas</h2>
-									<div class="row">
-										<div class="col-6 col-12-small">
-											<h3>Programación y Lenguajes</h3>
-											<ul>
-												<li>Python (Análisis de datos, resolucion de problemas logicos, procesamiento de imágenes, interfaces graficas, entre otros.)</li>
-												<li>C++ (Estructuras de datos, algoritmos avanzados y manejo del lenguaje)</li>
-												<li>C# y .NET Framework (Windows Forms, Web API, manejo de bases de datos)</li>
-												<li>VHDL (Diseño y simulación de circuitos digitales)</li>
-												<li>SQL (MySQL, SQL Server: consultas avanzadas, procedimientos almacenados, funciones de ventana)</li>
-												<li>HTML5 y CSS3 (Desarrollo de páginas estáticas, diseño responsivo, prototipos educativos)</li>
-											</ul>
-										</div>
-										<div class="col-6 col-12-small">
-											<h3>Herramientas y Tecnologías</h3>
-											<ul class="icons">
-												<li>Git y GitHub (Control de versiones)</li>
-												<li>Visual Studio (IDE para C#, VHDL)</li>
-												<li>EDA Playground y Tinkercad (Simulación de VHDL)</li>
-												<li>Log4net (Registro de eventos en aplicaciones .NET)</li>
-												<li>VirtualBox (Configuración de entornos virtuales para pruebas de seguridad)</li>
-												<li>Linux (Configuración de honeypots, manejo de sistemas operativos)</li>
-											</ul>
-										</div>
-									</div>
-									<hr />
-
-
-								<h2>Contacto</h2>
-									<p>Si deseas ponerte en contacto conmigo, puedes escribirme a:</p>
-									<ul class="alt">
-										<li>Email: <a href="mailto:yuniorvvv@gmail.com">yuniorvvv@gmail.com</a></li>
-										<li>Teléfono: <a href="tel:+18098563501">+1 (809) 856-3501</a></li>
-									</ul>
-									<p>También puedes seguirme en redes sociales:</p>
-									<ul class="icons alt">
-										<li><a href="https://www.instagram.com/aa.yunior1" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="https://github.com/SantoValenzuela" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-									</ul>
-							</section>
-
+							<ul class="actions">
+								<li><a href="Portafolio.html" class="button">Ver mis proyectos</a></li>
+								<li><a href="Habilidades.html" class="button">Ver habilidades</a></li>
+							</ul>
+						</div>
 					</div>
 
-				Copyright
-					<div id="copyright">
-						<ul><li>&copy; Santo Yunior Valenzuela Reyes</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					<hr />
+
+					<!-- LO MÁS RECIENTE / RELEVANTE -->
+					<h2>En qué estoy trabajando y qué me interesa</h2>
+					<p>
+						Me interesa la intersección entre <strong>software moderno</strong>, <strong>seguridad</strong> y <strong>sistemas confiables</strong>.
+						Por eso mis proyectos tienden a mezclar backend, base de datos, diseño de producto y mecanismos de trazabilidad (logs, auditoría o incluso blockchain).
+						Me motiva construir soluciones que puedan crecer: desde un MVP funcional hasta una arquitectura escalable.
+					</p>
+
+					<ul class="alt">
+						<li><strong>Producto + innovación:</strong> Ualett Go+ (SaaS + Fintech, billetera por capas y enfoque de retención justa).</li>
+						<li><strong>Confianza verificable:</strong> gestión de contratos con registro inmutable vía smart contract (Blockchain).</li>
+						<li><strong>Sistemas empresariales:</strong> AstraFly y Gestor de Contabilidad (modularidad, API, BD, trazabilidad).</li>
+						<li><strong>Seguridad y laboratorio:</strong> pruebas, monitoreo, honeypot y análisis en entornos controlados.</li>
+					</ul>
+
+					<hr />
+
+					<!-- CERTIFICACIONES (relevante, breve y claro) -->
+					<h2>Certificaciones</h2>
+					<p>
+						Mis certificaciones respaldan una base sólida en seguridad y en manejo de datos/infraestructura. Las aplico de forma práctica en proyectos
+						que requieren criterios de protección, disponibilidad y control.
+					</p>
+
+					<ul class="alt">
+						<li><strong>2026 — ISC2:</strong> Certified in Cybersecurity (CC)</li>
+						<li><strong>2025 — Fortinet:</strong> Fortinet Certified Associate - Cybersecurity (FCA)</li>
+						<li><strong>2025 — Fortinet:</strong> Fortinet Certified Fundamentals - Cybersecurity (FCF)</li>
+						<li><strong>2024 — Huawei ICT Academy:</strong> Data Storage (Course Verified)</li>
+					</ul>
+
+					<hr />
+
+					<!-- PROYECTOS DESTACADOS (en orden de impacto) -->
+					<h2>Proyectos destacados</h2>
+					<ul>
+						<li><a href="Ualett.html"><strong>Ualett Go+</strong></a> — ganador de hackatón (SaaS + Fintech, billetera por capas, avances de liquidez).</li>
+						<li><a href="ContratosBlockchain.html"><strong>Gestión de Contratos + Blockchain</strong></a> — trazabilidad y evidencia verificable (on-chain/off-chain).</li>
+						<li><a href="AstraFly.html"><strong>AstraFly</strong></a> — sistema de gestión empresarial con enfoque modular y operación real.</li>
+						<li><a href="CrackFirewall.html"><strong>Kit de Pruebas de Seguridad con GUI</strong></a> — herramientas de laboratorio y análisis (entornos controlados).</li>
+						<li><a href="Spyware.html"><strong>Monitor de Sistema y Keylogger con GUI</strong></a> — monitoreo y análisis educativo (entornos controlados).</li>
+						<li><a href="SistemaContable.html"><strong>Gestor de Contabilidad</strong></a> — compra/venta, inventario, proveedores y comprobantes.</li>
+					
+					</ul>
+
+					<hr />
+<!-- EXPERIENCIA / LOGROS -->
+<h2>Experiencia y logros</h2>
+
+<ul class="alt">
+	<li>
+		<strong>2026 | Hackatón Reto Ualett (INTEC / Ualett):</strong>
+		1.er lugar en la competencia.
+		<a href="Ualett.html">Ver proyecto</a>
+	</li>
+
+	<li>
+		<strong>2025 | Instituto Tecnológico de Santo Domingo (INTEC):</strong>
+		Desarrollo y presentación de una plataforma de gestión de contratos inteligentes basada en blockchain, integrando tecnologías emergentes en un proyecto real.
+		<a href="ContratosBlockchain.html">Ver proyecto</a>
+	</li>
+
+	<li>
+		<strong>2025 | APOLO 27 (INTEC):</strong>
+		Integrante del equipo que representaría al INTEC en el Human Exploration Rover Challenge (NASA HERC 2026).
+	</li>
+
+	<li>
+		<strong>2025 | Instituto Tecnológico de Santo Domingo (INTEC):</strong>
+		Desarrollo y presentación de ASTRAFLY, aplicación con enfoque en diseño, desarrollo e implementación de software aplicado a escenarios reales.
+		<a href="AstraFly.html">Ver proyecto</a>
+	</li>
+
+	<li>
+		<strong>2024 | Magic Capture The Flag (CTF 16°) — Latin America &amp; Caribbean Cyber Competence Centre:</strong>
+		1.er lugar junto al equipo “Chronosurge”.
+	</li>
+
+	<li>
+		<strong>2024 | NASA Space Apps Challenge:</strong>
+		Reconocimiento por Mejor Calidad de Narración, presentando el proyecto Education Hive.
+	</li>
+</ul>
+
+					<!-- FORMACIÓN -->
+					<h2>Formación académica</h2>
+					<h3>Ingeniería de Sistemas — INTEC</h3>
+					<p>
+						He fortalecido mi base en programación, bases de datos, estadística y desarrollo de software. He trabajado con MySQL y SQL Server
+						(consultas complejas, procedimientos y optimización), C++ (estructuras de datos y algoritmos), y VHDL (diseño/simulación digital).
+					</p>
+
+					<hr />
+
+					<!-- HABILIDADES (más limpio y profesional) -->
+					<h2>Habilidades técnicas</h2>
+					<div class="row">
+						<div class="col-6 col-12-small">
+							<h3>Lenguajes</h3>
+							<ul>
+								<li><strong>Python:</strong> automatización, interfaces gráficas, procesamiento y herramientas.</li>
+								<li><strong>C# / .NET:</strong> Windows Forms, lógica de negocio, APIs, trazabilidad con logs.</li>
+								<li><strong>C++:</strong> estructuras de datos, algoritmos y resolución de problemas.</li>
+								<li><strong>SQL:</strong> modelado relacional, consultas avanzadas, optimización.</li>
+								<li><strong>HTML/CSS:</strong> sitios estáticos responsivos y UI limpia.</li>
+							</ul>
+						</div>
+
+						<div class="col-6 col-12-small">
+							<h3>Herramientas y tecnologías</h3>
+							<ul>
+								<li><strong>Git/GitHub</strong> (control de versiones)</li>
+								<li><strong>SQL Server / MySQL</strong> (diseño y administración)</li>
+								<li><strong>Linux</strong> (laboratorio, scripts, pruebas)</li>
+								<li><strong>VirtualBox</strong> (entornos aislados)</li>
+								<li><strong>Log4net</strong> (trazabilidad en .NET)</li>
+							</ul>
+						</div>
 					</div>
+
+					<hr />
+
+					<!-- CONTACTO -->
+					<h2>Contacto</h2>
+					<p>Si deseas ponerte en contacto conmigo, puedes escribirme a:</p>
+					<ul class="alt">
+						<li>Email: <a href="mailto:yuniorvvv@gmail.com">yuniorvvv@gmail.com</a></li>
+						<li>Teléfono: <a href="tel:+18098563501">+1 (809) 856-3501</a></li>
+					</ul>
+					<p>También puedes seguirme en redes sociales:</p>
+					<ul class="icons alt">
+						<li><a href="https://www.instagram.com/aa.yunior1" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="https://github.com/SantoValenzuela" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+					</ul>
+
+				</section>
 
 			</div>
 
+			<!-- Copyright -->
+			<div id="copyright">
+				<ul><li>&copy; Santo Yunior Valenzuela Reyes</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+			</div>
+
+		</div>
+
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
