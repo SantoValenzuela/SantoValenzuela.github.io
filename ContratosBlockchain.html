@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Gestión de Contratos + Blockchain</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="logo">Santo Valenzuela</a>
+			</header>
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="index.html">Home Page</a></li>
+					<li><a href="SobreMi.html">Sobre mi</a></li>
+					<li class="active"><a href="Portafolio.html">Portafolio</a></li>
+					<li><a href="Habilidades.html">Experiencias y Habilidades</a></li>
+				</ul>
+				<ul class="icons">
+					<li><a href="https://www.instagram.com/aa.yunior1" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="https://github.com/SantoValenzuela" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+				</ul>
+			</nav>
+
+			<!-- Main -->
+			<div id="main">
+
+				<!-- Post -->
+				<section class="post">
+					<header class="major">
+						<span class="date">Enero, 2026</span>
+						<h1>Sistema de Gestión de Contratos<br />
+						con Integración a Blockchain</h1>
+						<p>
+							Este proyecto demuestra cómo llevar un problema “real” (gestión de contratos digitales) a una solución moderna y verificable,
+							combinando una aplicación web completa con <strong>registro inmutable en blockchain</strong>.
+							En vez de depender únicamente de una base de datos tradicional, el sistema incorpora un componente de <strong>prueba criptográfica</strong>
+							que fortalece la trazabilidad, reduce disputas y eleva la confianza entre partes.
+						</p>
+					</header>
+
+					<div class="image main">
+						<img src="images/ContratosBlockchain/pic1.png" alt="Gestión de contratos con blockchain - vista principal" />
+					</div>
+
+					<h2>¿Por qué este proyecto importa?</h2>
+					<p>
+						En sistemas tradicionales, el historial de un contrato puede ser alterado (intencionalmente o por errores operativos) y la validación depende
+						de un “tercero de confianza”. Aquí el enfoque es diferente: el contrato vive en el flujo normal de una aplicación empresarial, pero al alcanzar
+						un estado formal (por ejemplo, cuando todas las partes aceptan), se registra en una red blockchain.
+						Esto crea una evidencia verificable (timestamp, estado y referencia on-chain) que aporta <strong>no repudio</strong>, auditoría y transparencia.
+					</p>
+
+					<h2>Qué hace el sistema</h2>
+					<ul>
+						<li><strong>Gestión completa del ciclo de vida:</strong> creación, edición, revisión, aceptación o rechazo y seguimiento.</li>
+						<li><strong>Multiparte:</strong> invitación de participantes y control de decisiones por cada contraparte.</li>
+						<li><strong>Auditoría y trazabilidad:</strong> eventos y estados del contrato visibles para inspección.</li>
+						<li><strong>Registro en blockchain:</strong> al finalizar el proceso, el sistema registra el contrato mediante un smart contract, mostrando su estado on-chain.</li>
+						<li><strong>API documentada:</strong> endpoints probables desde Swagger para validar comportamiento e integración.</li>
+					</ul>
+
+					<h2>Tecnologías emergentes aplicadas</h2>
+					<p>
+						El valor “diferenciador” de este proyecto es que no usa blockchain como adorno: la integra de forma coherente como capa de confianza.
+						Se implementa un <strong>smart contract en Solidity</strong> (desplegado y probado en una red local con <strong>Hardhat</strong>),
+						mientras la aplicación principal funciona como una solución empresarial moderna con <strong>SPA</strong> y <strong>API REST</strong>.
+						Este tipo de arquitectura híbrida (Web2 + Web3) es una tendencia real en productos que requieren auditoría, cumplimiento y transparencia.
+					</p>
+
+					<h2>Arquitectura (pensada como producto)</h2>
+					<ul>
+						<li><strong>Frontend (SPA):</strong> React + TypeScript (Vite) para una interfaz rápida, escalable y modular.</li>
+						<li><strong>Backend (API REST):</strong> Node.js + TypeScript + Express como núcleo de negocio, seguridad y reglas de estado.</li>
+						<li><strong>Persistencia:</strong> SQL Server para datos operativos (usuarios, contratos, participantes, eventos, etc.).</li>
+						<li><strong>Capa Blockchain:</strong> smart contract en Solidity + Hardhat para registrar el contrato y su estado de forma inmutable.</li>
+					</ul>
+
+					<h2>Lo más retador (y lo más valioso)</h2>
+					<p>
+						El reto clave está en “hacer que ambos mundos conversen”: mantener una experiencia fluida (off-chain) sin perder la validez verificable (on-chain).
+						Esto obliga a pensar como ingeniero de producto: manejo de estados, consistencia, confirmaciones de transacciones, seguridad en firmas y cuidado
+						con credenciales (claves privadas / variables de entorno). Es un ejercicio completo de <strong>arquitectura moderna</strong>, no solo de código.
+					</p>
+
+					<h2>Casos de uso donde encaja</h2>
+					<ul>
+						<li>Contratos de servicios profesionales (freelance / consultoría) con trazabilidad.</li>
+						<li>Acuerdos empresariales internos (aprobaciones, versiones y auditoría).</li>
+						<li>Procesos con cumplimiento (compliance) y necesidad de evidencia verificable.</li>
+						<li>Plataformas B2B donde la confianza entre partes impacta directamente el negocio.</li>
+					</ul>
+
+					<h2>Código fuente</h2>
+					<p>
+						Puedes ver el repositorio del proyecto aquí:
+						<a href="https://github.com/SantoValenzuela/sistema-gestion-contratos" target="_blank" rel="noopener noreferrer">
+							Sistema de Gestión de Contratos con Integración a Blockchain (GitHub)
+						</a>
+					</p>
+				</section>
+
+				<h2>Imágenes del proyecto</h2>
+				<div class="box alt">
+					<div class="row gtr-50 gtr-uniform">
+						<div class="col-4"><span class="image fit"><img src="images/ContratosBlockchain/pic1.png" alt="" /></span></div>
+						<div class="col-4"><span class="image fit"><img src="images/ContratosBlockchain/pic2.png" alt="" /></span></div>
+						<div class="col-4"><span class="image fit"><img src="images/ContratosBlockchain/pic3.png" alt="" /></span></div>
+						<!-- Break -->
+						<div class="col-4"><span class="image fit"><img src="images/ContratosBlockchain/pic4.png" alt="" /></span></div>
+						<div class="col-4"><span class="image fit"><img src="images/ContratosBlockchain/pic5.png" alt="" /></span></div>
+						<div class="col-4"><span class="image fit"><img src="images/ContratosBlockchain/pic6.png" alt="" /></span></div>
+						<!-- Break -->
+						<div class="col-4"><span class="image fit"><img src="images/ContratosBlockchain/pic7.png" alt="" /></span></div>
+						<div class="col-4"><span class="image fit"><img src="images/ContratosBlockchain/pic8.png" alt="" /></span></div>
+						<div class="col-4"><span class="image fit"><img src="images/ContratosBlockchain/pic9.png" alt="" /></span></div>
+					</div>
+				</div>
+
+				<h2>Contacto</h2>
+				<ul class="alt">
+                    				<p>Si deseas ponerte en contacto conmigo, puedes escribirme a:</p>
+					<li>Email: <a href="mailto:yuniorvvv@gmail.com">yuniorvvv@gmail.com</a></li>
+					<li>Teléfono: <a href="tel:+18098563501">+1 (809) 856-3501</a></li>
+				</ul>
+				
+				<ul class="icons alt">
+                    <p>También puedes seguirme en redes sociales:</p>
+					<li><a href="https://www.instagram.com/aa.yunior1" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="https://github.com/SantoValenzuela" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+				</ul>
+
+			</div>
+
+			<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
